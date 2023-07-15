@@ -13,12 +13,11 @@ def model(saveDir, imageURL):
 def model_render(saveDir, imageURL):
     model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
     results = model(imageURL)
-    results.render()  # results.xyxyに対する境界ボックスを描画
-    imgPil = Image.fromarray(results.rendered.astype('uint8'))  # PIL Imageオブジェクトへ変換
 
     # image to base64
     buffered = io.BytesIO()
-    imgPil.save(buffered, format="JPEG")  # 画像をJPEG形式で保存
-    imgBase64 = base64.b64encode(buffered.getvalue()).decode()  # base64形式にエンコードして文字列に変換
+    img_base64 = Image.fromarray(results.ims[0])
+    img_base64.save(buffered, format="JPEG")
+    print(base64.b64encode(buffered.getvalue()).decode('utf-8')) 
 
-    return imgBase64
+    return base64.b64encode(buffered.getvalue()).decode('utf-8')
