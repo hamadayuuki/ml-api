@@ -1,14 +1,16 @@
 from flask import Flask, request, jsonify
-from yolov5.yolov5 import model
+from yolov5.yolov5 import Model
 
 app = Flask(__name__)
+
+yolov5 = Model()
 
 @app.route('/v1/yolov5', methods=['GET'])
 def run_yolov5():
     SAVE_DIR = 'result/yolov5/pic'
     imageURL = 'https://ultralytics.com/images/zidane.jpg'   # TODO: 可変に
 
-    results = model(SAVE_DIR, imageURL)
+    results = yolov5.model(SAVE_DIR, imageURL)
 
     # JSON形式でレスポンス
     return jsonify(str(results))
