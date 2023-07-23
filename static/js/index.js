@@ -1,3 +1,5 @@
+const baseURL = "https://ml-api-nn8r.onrender.com";
+
 // MARK: - メッセージを作成
 function sayUser(message) {
   // 右側にチャットボックスを作成
@@ -31,7 +33,7 @@ function sayOperator(message) {
 function read() {
   $('#chat-area').empty();   // メッセージ一覧初期化
 
-  fetch('/v1/read', {
+  fetch(baseURL + '/v1/read', {
     method: 'GET',
   })
   .then((res) => res.json())
@@ -53,7 +55,7 @@ window.onload = read;
 function update() {
   $('#chat-area').empty();
 
-  fetch('/v1/update', {
+  fetch(baseURL + '/v1/update', {
     method: 'GET',
   })
   .then((res) => res.json())
