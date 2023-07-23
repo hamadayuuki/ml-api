@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <!-- CSS/JavaScript を呼び出す -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <!-- JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 検索タブに表示される文字列 -->
+    <title>小野研</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>小野研チャット</h1>
+    </header>
+
+    <!-- メッセージ一覧 -->
+    <section class="content">
+      <ul id="chat-area">
+        <!-- 実体は JavaScript から注入する -->
+
+        <!-- ↓例 -->
+        <!-- <li>
+          <div class="balloon balloon-r">
+            <p class="say say-r">こんにちは</p>
+          </div>
+        </li>
+        <li>
+          <div class="balloon">
+            <img class="img-circle" src="{{ url_for('static', filename='images/operator.png') }}" alt="operator" />
+            <p class="say">なんでも聞いてください。</p>
+          </div>
+        </li> -->
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <!-- テキスト入力欄 -->
+      <input
+        id="msg-send"
+        class="msg-input"
+        type="text"
+        placeholder="メッセージ（Shift+Enterで送信）"
+      />
+
+      <!-- 送信ボタン -->
+      <!-- ボタンをクリックすると JavaScriptで定義した update() を呼び出す -->
+      <button class="btn-submit" type="button" onclick="update()">
+        送信
+      </button>
+    </footer>
+  </body>
+</html>
