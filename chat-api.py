@@ -23,7 +23,14 @@ CRUD
 ]
 """
 
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, make_response
+
+def initCache(res):
+    res.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    res.headers["Pragma"] = "no-cache"
+    res.headers["Expires"] = "0"
+    return res
+
 
 app = Flask(__name__)
 
@@ -31,7 +38,8 @@ messages = []
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    res = make_response(render_template('index.html'))
+    return initCache(res)
 
 # C : Create
 @app.route('/v1/create', methods=['GET'])
