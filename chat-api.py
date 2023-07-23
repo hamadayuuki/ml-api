@@ -26,12 +26,6 @@ CRUD
 from flask import Flask, request, jsonify, render_template, make_response
 from flask_cors import CORS
 
-def initCache(res):
-    res.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-    res.headers["Pragma"] = "no-cache"
-    res.headers["Expires"] = "0"
-    return res
-
 app = Flask(__name__)
 CORS(app)
 
@@ -39,8 +33,7 @@ messages = []
 
 @app.route('/')
 def index():
-    res = make_response(render_template('index.html'))
-    return initCache(res)
+    return render_template('index.html')
 
 # C : Create
 @app.route('/v1/create', methods=['GET'])
