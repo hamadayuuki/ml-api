@@ -36,7 +36,12 @@ function read() {
   fetch(baseURL + '/v1/read', {
     method: 'GET',
   })
-  .then((res) => res.json())
+  .then((res) => {
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    return res.json();
+  })
   .then((v) => {
     v.forEach((message) => {
       if (message.name === "me") {
@@ -44,6 +49,9 @@ function read() {
       } else {
         sayOperator(message.message);
       }
+    })
+    .catch(e => {
+      console.log('There was a problem with your fetch operation: ' + e.message);
     });
   });
 }
@@ -58,7 +66,12 @@ function update() {
   fetch(baseURL + '/v1/update', {
     method: 'GET',
   })
-  .then((res) => res.json())
+  .then((res) => {
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    return res.json();
+  })
   .then((v) => {
     v.forEach((message) => {
       if (message.name === "me") {
@@ -66,6 +79,9 @@ function update() {
       } else {
         sayOperator(message.message);
       }
+    })
+    .catch(e => {
+      console.log('There was a problem with your fetch operation: ' + e.message);
     });
   });
 }
