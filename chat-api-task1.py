@@ -49,7 +49,7 @@ def read():
 # U : Update
 @app.route('/v1/update', methods=['①'])
 def update():
-    message = {"name": name, "message": message}
+    message = {"name": "me", "message": "update"}
     ③   # メッセージを追加
     return ②
 
