@@ -52,7 +52,7 @@ def update():
     name =  request.args.get("name")          # ?name=hoge → hoge, 空 → None
     if name == None: name = "oparator"
     message =  request.args.get("message")    # ?message=hello → hello
-    if message == None: message = "message is empty"
+    if message == None: message = "message is None"
 
     message = {"name": name, "message": message}
     messages.append(message)
