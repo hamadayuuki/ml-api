@@ -61,7 +61,10 @@ window.onload = read;
 function update() {
   $('#chat-area').empty();
 
-  fetch('/v1/update', {
+  const name = "me";
+  const message = $('#msg-send').val();   // 入力した文字列
+
+  fetch('/v1/update?' + 'name=' + name + '&message=' + message, {
     method: 'GET',
   })
   .then((res) => {
