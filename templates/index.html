@@ -2,13 +2,9 @@
 
 <html lang="ja">
   <head>
-    <!-- CSS/JavaScript を呼び出す -->
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-    <!-- JavaScript -->
-    <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,6 +52,10 @@
       <button class="btn-submit" type="button" onclick="update()">
         送信
       </button>
+
+      <!-- JavaScript -->
+      <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+      <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     </footer>
   </body>
 </html>
