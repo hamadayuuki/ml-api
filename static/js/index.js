@@ -16,7 +16,7 @@ function sayOperator(message) {
   // メッセージを表示するため、htmlにメッセージ一覧を注入
   const chatbox =
     '<li><div class="balloon">' +
-      '<img class="img-circle" src="{{ url_for("static", filename="images/operator.png") }}" alt="operator" />' +
+      //'<img class="img-circle" src="{{ url_for("static", filename="images/operator.png") }}" alt="operator" />' +
       '<p class="say">' +
         message +
       '</p>' +
@@ -53,8 +53,6 @@ function read() {
     });
   });
 }
-
-window.onload = read;
 
 
 // MARK: - Update
@@ -95,9 +93,12 @@ function update() {
 // extra : メッセージを指定した削除を可能とする
 
 
-// MARK: - その他
-// 入力欄が空ならボタンを無効化
+// MARK: - ホーム画面リロード時
 window.onload = function() {
+  // メッセージ一覧を表示
+  read();
+
+  // 入力欄が空ならボタンを無効化
   let input = document.getElementById('msg-send');
   let button = document.querySelector('.btn-submit');
 
