@@ -93,3 +93,18 @@ function update() {
 // 2 : javascriptに "v1/delete" へリクエストする処理を書く
 //         - "v1/read, update" を参考にする
 // extra : メッセージを指定した削除を可能とする
+
+
+// MARK: - その他
+// 入力欄が空ならボタンを無効化
+window.onload = function() {
+  let input = document.getElementById('msg-send');
+  let button = document.querySelector('.btn-submit');
+
+  button.disabled = !input.value.trim();
+
+  // 入力欄の内容が変更されたときにボタンの状態を更新
+  input.addEventListener('input', function() {
+    button.disabled = !this.value.trim();
+  });
+};
