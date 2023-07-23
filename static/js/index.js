@@ -16,7 +16,7 @@ function sayOperator(message) {
   // メッセージを表示するため、htmlにメッセージ一覧を注入
   const chatbox =
     '<li><div class="balloon">' +
-      '<img class="img-circle" src="{{ url_for("static", filename="images/operator.png") }}" alt="operator" />' +
+      //'<img class="img-circle" src="{{ url_for("static", filename="images/operator.png") }}" alt="operator" />' +
       '<p class="say">' +
         message +
       '</p>' +
