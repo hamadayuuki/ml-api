@@ -49,7 +49,7 @@ def read():
 # U : Update
 @app.route('/v1/update', methods=['GET'])
 def update():
-    message = {"name": name, "message": message}
+    message = {"name": "me", "message": "update"}
     messages.append(message)
     return jsonify(messages)
 
