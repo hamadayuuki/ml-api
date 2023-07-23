@@ -24,6 +24,7 @@ CRUD
 """
 
 from flask import Flask, request, jsonify, render_template, make_response
+from flask_cors import CORS
 
 def initCache(res):
     res.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
@@ -31,9 +32,8 @@ def initCache(res):
     res.headers["Expires"] = "0"
     return res
 
-
 app = Flask(__name__)
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+CORS(app)
 
 messages = []
 
