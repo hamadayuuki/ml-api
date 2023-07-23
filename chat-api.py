@@ -49,7 +49,12 @@ def read():
 # U : Update
 @app.route('/v1/update', methods=['GET'])
 def update():
-    message = {"name": "me", "message": "update"}
+    name =  request.args.get("name")          # ?name=hoge → hoge, 空 → None
+    if name == None: name = "oparator"
+    message =  request.args.get("message")    # ?message=hello → hello
+    if message == None: message = "message is empty"
+
+    message = {"name": name, "message": message}
     messages.append(message)
     return jsonify(messages)
 
