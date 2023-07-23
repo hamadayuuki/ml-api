@@ -84,14 +84,6 @@ function update() {
   });
 }
 
-$("#msg-send").keydown(function (e) {
-  // 「Shift」+「Enter」を押したか
-  if (e.keyCode === 13 && e.shiftKey) {
-    e.preventDefault();  // Shift+Enterでのデフォルトの動作（改行）を防ぐ
-    update();
-  }
-});
-
 
 // MARK: - Delete
 // 1 : htmlに「メッセージ削除ボタン」を追加
