@@ -14,13 +14,18 @@ CRUDを学びながらチャットアプリを作っていきます
 | ---- |
 |  <img width = 400 src = "./README/create.gif">  |
 
-|  Create  |  Read  |  Update  |  Delete  |
-| ---- | ---- | ---- | ---- |
-|  <img width = 400 src = "./README/create.gif">  |  <img width = 400 src = "./README/read.gif">  |  <img width = 400 src = "./README/update.gif">  |  <img width = 400 src = "./README/delete.gif">  |
+|  Create  |  Read  |
+| ---- | ---- |
+|  <img width = 400 src = "./README/create.gif">  |  <img width = 400 src = "./README/read.gif">  |
+
+|  Update  |  Delete  |
+| ---- | ---- |
+|  <img width = 400 src = "./README/update.gif">  |  <img width = 400 src = "./README/delete.gif">  |
+
 
 ### フォルダ構成
 
- <img width = 80% src = "./README/folder.png">
+ <img width = 60% src = "./README/folder.png">
 
 
 ### 完成したプログラムの実行確認
